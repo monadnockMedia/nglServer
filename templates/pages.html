@@ -1,5 +1,4 @@
 $def with (rows)
 $for row in rows:
-	<h1>$row["Location"]</h1>
-	<h2>$row["Month"] $row["Day"], $row["Year"].</h2>
+	<h2>$row["Month"] $row["Day"], $row["Year"].<br>$row["Location"]</h2>
 	<p>$row["Body"]</p>
