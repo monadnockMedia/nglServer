@@ -30,12 +30,12 @@ class lifeAboard:
 		_authorID = url_vars.authorID
 		_categoryID = url_vars.categoryID
 		print "cat:"+_categoryID
-
+		
+		_author = "captain" 
 		with con:
 			#cur.execute("SELECT * FROM lifeAboard WHERE AuthorID = ? and CategoryID = ?",(1,1))
 			cur.execute("SELECT * FROM lifeAboard WHERE AuthorID = ? AND CategoryID = ?",(_authorID,_categoryID))
 			rows = cur.fetchall()
-
 		
 		"""
 		testRow1 = {'time':'Noon','dayofweek':'Monday','body':'Lorem Ipsum'}
@@ -43,7 +43,7 @@ class lifeAboard:
 		testRows = testRow1, testRow2;
 		"""
 #		return rows
-		return render.pages(rows)
+		return render.pages(rows, _author)
 		
 
     def GET(self):
@@ -54,7 +54,10 @@ class lifeAboard:
 		_authorID = url_vars.authorID
 		_categoryID = url_vars.categoryID
 		print "cat:"+_categoryID
-
+		authorTest = bool(int(_authorID)-1)
+		_author = "davy" if authorTest else "captain"
+		print _author
+		print authorTest
 		with con:
 			#cur.execute("SELECT * FROM lifeAboard WHERE AuthorID = ? and CategoryID = ?",(1,1))
 			cur.execute("SELECT * FROM lifeAboard WHERE AuthorID = ? AND CategoryID = ?",(_authorID,_categoryID))
@@ -67,7 +70,7 @@ class lifeAboard:
 		testRows = testRow1, testRow2;
 		"""
 #		return rows
-		return render.pages(rows)
+		return render.pages(rows, _author)
 """
 class bio_id:
     def POST(self, _id):
