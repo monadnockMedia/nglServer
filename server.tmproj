@@ -2,101 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>currentDocument</key>
-	<string>../LifeAboard/server.py</string>
 	<key>documents</key>
-	<array>
-		<dict>
-			<key>filename</key>
-			<string>../LifeAboard/ngl.db</string>
-			<key>lastUsed</key>
-			<date>2013-08-29T15:37:49Z</date>
-		</dict>
-		<dict>
-			<key>filename</key>
-			<string>../LifeAboard/server.py</string>
-			<key>lastUsed</key>
-			<date>2013-08-29T15:50:40Z</date>
-			<key>selected</key>
-			<true/>
-		</dict>
-		<dict>
-			<key>filename</key>
-			<string>../LifeAboard/server.pyc</string>
-		</dict>
-		<dict>
-			<key>expanded</key>
-			<true/>
-			<key>name</key>
-			<string>templates</string>
-			<key>regexFolderFilter</key>
-			<string>!.*/(\.[^/]*|CVS|_darcs|_MTN|\{arch\}|blib|.*~\.nib|.*\.(framework|app|pbproj|pbxproj|xcode(proj)?|bundle))$</string>
-			<key>sourceDirectory</key>
-			<string>../LifeAboard/templates</string>
-		</dict>
-		<dict>
-			<key>filename</key>
-			<string>../LifeAboard/templates/pages.html</string>
-			<key>lastUsed</key>
-			<date>2013-08-29T15:50:40Z</date>
-		</dict>
-	</array>
+	<array/>
 	<key>fileHierarchyDrawerWidth</key>
 	<integer>200</integer>
 	<key>metaData</key>
-	<dict>
-		<key>../LifeAboard/ngl.db</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>0</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>../LifeAboard/server.py</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>43</integer>
-				<key>line</key>
-				<integer>26</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>../LifeAboard/templates/pages.html</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>20</integer>
-				<key>line</key>
-				<integer>4</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-	</dict>
-	<key>openDocuments</key>
-	<array>
-		<string>../LifeAboard/ngl.db</string>
-		<string>../LifeAboard/server.py</string>
-		<string>../LifeAboard/templates/pages.html</string>
-	</array>
+	<dict/>
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
-	<string>{{-99, 987}, {1230, 874}}</string>
+	<string>{{0, 4}, {1230, 874}}</string>
 </dict>
 </plist>

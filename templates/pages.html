@@ -1,4 +1,12 @@
 $def with (rows)
+$ page = 0
+$ length = 3
+$ last = len(rows)
 $for row in rows:
+	$if page%length == 0:  <div class ="page">
+	<div class ="entry">
 	<h2>$row["Month"] $row["Day"], $row["Year"].<br>$row["Location"]</h2>
 	<p>$row["Body"]</p>
+	</div>
+	$if page%length == length-1 or page == last:  </div>
+	$ page += 1
