@@ -23,20 +23,23 @@ class index:
 
 class lifeAboard:
     def POST(self):
-		webpy.header('Access-Control-Allow-Origin',      '*')
+		ebpy.header('Access-Control-Allow-Origin',      '*')
 		webpy.header('Access-Control-Allow-Credentials', 'true')
 		webpy.header('Content-Type','text/html; charset=utf-8', unique=True) 
 		url_vars = webpy.input()
 		_authorID = url_vars.authorID
 		_categoryID = url_vars.categoryID
 		print "cat:"+_categoryID
-		
-		_author = "captain" 
+		authorTest = bool(int(_authorID)-1)
+		_author = "davy" if authorTest else "captain"
+		print _author
+		print authorTest
 		with con:
 			#cur.execute("SELECT * FROM lifeAboard WHERE AuthorID = ? and CategoryID = ?",(1,1))
 			cur.execute("SELECT * FROM lifeAboard WHERE AuthorID = ? AND CategoryID = ?",(_authorID,_categoryID))
 			rows = cur.fetchall()
-		
+
+
 		"""
 		testRow1 = {'time':'Noon','dayofweek':'Monday','body':'Lorem Ipsum'}
 		testRow2 = {'time':'9am','dayofweek':'Tuesday','body':'FOO BAR'}
