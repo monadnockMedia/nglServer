@@ -23,7 +23,7 @@ class index:
 
 class lifeAboard:
     def POST(self):
-		ebpy.header('Access-Control-Allow-Origin',      '*')
+		webpy.header('Access-Control-Allow-Origin',      '*')
 		webpy.header('Access-Control-Allow-Credentials', 'true')
 		webpy.header('Content-Type','text/html; charset=utf-8', unique=True) 
 		url_vars = webpy.input()
