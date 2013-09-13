@@ -46,7 +46,7 @@ class lifeAboard:
 		testRows = testRow1, testRow2;
 		"""
 #		return rows
-		return render.pages(rows, _author)
+		return render.pages(rows)
 		
 
     def GET(self):
@@ -72,8 +72,7 @@ class lifeAboard:
 		testRow2 = {'time':'9am','dayofweek':'Tuesday','body':'FOO BAR'}
 		testRows = testRow1, testRow2;
 		"""
-#		return rows
-		return render.pages(rows, _author)
+		return render.pages(rows)
 """
 class bio_id:
     def POST(self, _id):
