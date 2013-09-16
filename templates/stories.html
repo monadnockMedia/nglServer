@@ -1,0 +1,6 @@
+$def with (rows)
+$for row in rows:
+	<div class = "ship_section" id='$row["ID"]'>
+	<img class = "ship" src='IMG/$row["image"]'/>
+	<h1 class ="ship">$row["ship"]</h1>
+	</div>

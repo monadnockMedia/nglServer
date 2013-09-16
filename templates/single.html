@@ -1,0 +1,10 @@
+$def with (rows)
+$for row in rows:
+	<div class = "ship_section" id='$row["ID"]'>
+	<img class = "ship" src='IMG/$row["image"]'/>
+	<h1 class ="ship">$row["ship"]</h1>
+	<img class = "port" src='IMG/$row["portrait"]'/>
+	<h1 class ="name">$row["first"] $row["last"] </h1>
+	<p class = "bodytext">$:row["body"]</p>
+	<p class = "artifact">$row["artifact"]</p>
+	</div>
