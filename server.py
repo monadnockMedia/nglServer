@@ -13,13 +13,51 @@ cur = con.cursor()
 
 urls = (
     '/lifeAboard/', 'lifeAboard',
-	'/Bio/(.*)', 'bio_id'
+	'/story', 'story',
+	'/story/(.*)', 'singleStory'
 	
 )
 
 class index:
 	def GET(self):
-		raise webpy.seeother('/static/who.html')
+		raise webpy.seeother('/static/index.html')
+
+class singleStory:
+	def GET(self, hoot):
+		webpy.header('Access-Control-Allow-Origin',      '*')
+		webpy.header('Access-Control-Allow-Credentials', 'true')
+		webpy.header('Content-Type','text/html; charset=utf-8', unique=True) 
+		with con:
+			#cur.execute("SELECT * FROM lifeAboard WHERE AuthorID = ? and CategoryID = ?",(1,1))
+			cur.execute("SELECT * FROM story WHERE ID = ?",(hoot))
+			rows = cur.fetchall()
+
+
+		"""
+		testRow1 = {'time':'Noon','dayofweek':'Monday','body':'Lorem Ipsum'}
+		testRow2 = {'time':'9am','dayofweek':'Tuesday','body':'FOO BAR'}
+		testRows = testRow1, testRow2;
+		"""
+		#return rows
+		return render.single(rows)
+
+class story:
+	def GET(self):
+		webpy.header('Access-Control-Allow-Origin',      '*')
+		webpy.header('Access-Control-Allow-Credentials', 'true')
+		webpy.header('Content-Type','text/html; charset=utf-8', unique=True) 
+		with con:
+			#cur.execute("SELECT * FROM lifeAboard WHERE AuthorID = ? and CategoryID = ?",(1,1))
+			cur.execute("SELECT * FROM story ORDER BY last ASC")
+			rows = cur.fetchall()
+
+
+		"""
+		testRow1 = {'time':'Noon','dayofweek':'Monday','body':'Lorem Ipsum'}
+		testRow2 = {'time':'9am','dayofweek':'Tuesday','body':'FOO BAR'}
+		testRows = testRow1, testRow2;
+		"""
+		return render.stories(rows)
 
 class lifeAboard:
     def POST(self):
