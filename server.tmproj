@@ -8,7 +8,7 @@
 			<key>filename</key>
 			<string>server.py</string>
 			<key>lastUsed</key>
-			<date>2013-09-12T20:56:05Z</date>
+			<date>2013-09-24T13:10:32Z</date>
 		</dict>
 		<dict>
 			<key>expanded</key>
@@ -28,6 +28,6 @@
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
-	<string>{{-85, 1040}, {1230, 874}}</string>
+	<string>{{10, 4}, {1230, 874}}</string>
 </dict>
 </plist>
