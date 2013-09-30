@@ -2,7 +2,7 @@ $def with (rows, author)
 $ page = 0
 $ length = 3
 $ last = len(rows)
-<div id = "book $author">
+
 $for row in rows:
 	$if page%length == 0:  <div class ="page">
 	<div class ="entry">
@@ -11,4 +11,4 @@ $for row in rows:
 	</div>
 	$if page%length == length-1 or page == last:  </div>
 	$ page += 1
-</div>
+
