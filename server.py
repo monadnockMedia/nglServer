@@ -110,7 +110,7 @@ class lifeAboard:
 		testRow2 = {'time':'9am','dayofweek':'Tuesday','body':'FOO BAR'}
 		testRows = testRow1, testRow2;
 		"""
-		return render.pages(rows)
+		return render.pages(rows,_author)
 """
 class bio_id:
     def POST(self, _id):
