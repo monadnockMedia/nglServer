@@ -1,14 +1,18 @@
 $def with (rows, author)
-$ page = 0
-$ length = 3
+$ prev = 0
+
 $ last = len(rows)
 
 $for row in rows:
-	$if page%length == 0:  <div class ="page">
+	$ page = row["PageID"]
+	$ page = int(page)
+	$if page > prev and prev != 0:  </div>
+	$if page > prev: <div class ="page" id = $page >
 	<div class ="entry">
-	<h1>$row["Month"] $row["Day"], $row["Year"].<br>$row["Location"]</h1>
+	<h1>$row["Month"] $row["Day"] $row["Year"] $row["Location"]</h1>
 	<p>$:row["Body"]</p>
 	</div>
-	$if page%length == length-1 or page == last:  </div>
+	$ prev = page
 	$ page += 1
+</div>
 
