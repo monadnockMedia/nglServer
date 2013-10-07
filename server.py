@@ -14,13 +14,14 @@ cur = con.cursor()
 urls = (
     '/lifeAboard/', 'lifeAboard',
 	'/story', 'story',
-	'/story/(.*)', 'singleStory'
+	'/story/(.*)', 'singleStory',
+	'/woot', 'index'
 	
 )
 
 class index:
 	def GET(self):
-		raise webpy.seeother('/static/index.html')
+		raise webpy.seeother('/life/index.html')
 
 class singleStory:
 	def GET(self, hoot):
