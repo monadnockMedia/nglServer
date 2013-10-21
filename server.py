@@ -123,7 +123,7 @@ class singleLife:
 		webpy.header('Content-Type','text/html; charset=utf-8', unique=True) 
 		with con:
 			#cur.execute("SELECT * FROM lifeAboard WHERE AuthorID = ? and CategoryID = ?",(1,1))
-			cur.execute("SELECT * FROM lifeSaving WHERE ID = ?",(id))
+			cur.execute("SELECT * FROM lifeSaving WHERE ID = ?",[id])
 			row = cur.fetchone()
 
 
