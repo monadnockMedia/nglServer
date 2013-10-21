@@ -15,7 +15,10 @@ urls = (
     '/lifeAboard/', 'lifeAboard',
 	'/story', 'story',
 	'/story/(.*)', 'singleStory',
-	'/woot', 'index'
+	'/', 'index',
+	'/lifeSaving/LAKE/(.*)','lifeSaving',
+	'/lifeSaving/ID/(.*)','singleLife',
+	
 	
 )
 
@@ -112,35 +115,45 @@ class lifeAboard:
 		testRows = testRow1, testRow2;
 		"""
 		return render.pages(rows,_author)
-"""
-class bio_id:
-    def POST(self, _id):
+		
+class singleLife:
+	def GET(self, id):
 		webpy.header('Access-Control-Allow-Origin',      '*')
 		webpy.header('Access-Control-Allow-Credentials', 'true')
-		readable = int(webpy.input().readable)
-		bio = ""
+		webpy.header('Content-Type','text/html; charset=utf-8', unique=True) 
 		with con:
-			cur.execute("SELECT * FROM WhosWho WHERE id = ?",[_id])
+			#cur.execute("SELECT * FROM lifeAboard WHERE AuthorID = ? and CategoryID = ?",(1,1))
+			cur.execute("SELECT * FROM lifeSaving WHERE ID = ?",(id))
 			row = cur.fetchone()
-			print("readable :: ", readable , bool(readable) )
-			if readable == True:
-				img = row["Photo"]
-				bio+="<div class = 'half left readable'><img class = 'headshot' src ='%s%s' /></div>" % (imgurl,img)
-				bio+="<div class = 'half right readable'><div id ='bio' class='readable'><h1>%s %s %s</h1><h1>(%s-%s)</h1><p>%s</p><p>%s</p></div>" % (row["First"],row["Middle"],row["Last"],row["Birth"],row["Death"],row["Body1"],row["Body2"])
-				#	bio+="</div>"
-				bio+=  "<ol id ='bioPage'><li id ='biop' class = '' dir = '-1' >&#8592prev</li><li>&#9674</li><li id ='bion' class = 'active' dir = '1'>next&#8594</li></ol></div>"
-			else:
-				img = row["Photo"]
-				bio+="<div class = 'half left'><img class = 'headshot' src ='%s%s' /></div>" % (imgurl,img)
-				bio+="<div class = 'half right'><div id ='bio'><h1>%s %s %s</h1><h1>(%s-%s)</h1><p>%s</p><p>%s</p></div>" % (row["First"],row["Middle"],row["Last"],row["Birth"],row["Death"],row["Body1"],row["Body2"])
-				#	bio+="</div>"
-				bio+=  "<ol id ='bioPage'><li id ='biop' class = '' dir = '-1' >&#8592prev</li><li>&#9674</li><li id ='bion' class = 'active' dir = '1'>next&#8594</li></ol></div>"
-		
-		
-		
-		return bio
-		
-"""
+
+
+		"""
+		testRow1 = {'time':'Noon','dayofweek':'Monday','body':'Lorem Ipsum'}
+		testRow2 = {'time':'9am','dayofweek':'Tuesday','body':'FOO BAR'}
+		testRows = testRow1, testRow2;
+		"""
+		#return rows
+		return render.life_single(row)
+
+class lifeSaving:
+	def GET(self, lake):
+		webpy.header('Access-Control-Allow-Origin',      '*')
+		webpy.header('Access-Control-Allow-Credentials', 'true')
+		webpy.header('Content-Type','text/html; charset=utf-8', unique=True) 
+		_q = "SELECT * FROM lifeSaving WHERE Lake = %s" %("'"+lake+"'")
+		print(_q)
+		with con:
+			cur.execute(_q)
+			rows = cur.fetchall()
+
+
+		"""
+		testRow1 = {'time':'Noon','dayofweek':'Monday','body':'Lorem Ipsum'}
+		testRow2 = {'time':'9am','dayofweek':'Tuesday','body':'FOO BAR'}
+		testRows = testRow1, testRow2;
+		"""
+		return render.life_all(rows)
+
 if __name__ == "__main__":
     app = webpy.application(urls, globals())
     app.run()
