@@ -1,3 +1,4 @@
 $def with (rows)
 $for row in rows:
-	<h2>$row["Report"]</h2>
+	<div class="report" reportID="$row["ID"]"><h2>$row["Date"]</h2>
+	<p>$row["Summary"]</p><br/><br/></div>
