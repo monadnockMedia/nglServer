@@ -25,7 +25,7 @@ urls = (
 
 class index:
 	def GET(self):
-		raise webpy.seeother('/life/index.html')
+		raise webpy.seeother('static/lifeAboard/index.html')
 
 class singleStory:
 	def GET(self, hoot):
