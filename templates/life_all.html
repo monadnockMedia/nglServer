@@ -1,4 +1,16 @@
 $def with (rows)
+<div class ="summaries">
 $for row in rows:
-	<div class="report" reportID="$row["ID"]"><h2>$row["Date"]</h2>
-	<p>$row["Summary"]</p><br/><br/></div>
+	<div class="summary" summaryID="$row["ID"]">
+		<h2>$row["Date"]</h2>
+		<p>$:row["Summary"]</p></br>
+	</div>
+</div>
+<div class ="reports">
+$for row in rows:
+	$ img = row["Image"]
+	<div class="report" reportID="$row["ID"]">
+		<p>$:row["Report"]</p>
+		<img src= $img />
+	</div>
+</div>

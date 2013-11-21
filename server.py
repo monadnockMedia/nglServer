@@ -17,7 +17,8 @@ urls = (
 	'/story/(.*)', 'singleStory',
 	'/', 'index',
 	'/lifeSaving/LAKE/(.*)','lifeSaving',
-	'/lifeSaving/ID/(.*)','singleLife',
+	'/lifeSaving/ID/(.*)','singleLife'
+	
 	
 	
 )
