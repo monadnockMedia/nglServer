@@ -1,17 +1,22 @@
 $def with (rows)
 $for row in rows:
 	<div id = "close">X</div>
+	<div class = "bodytext"><div class ="ship_section floatLeft">
+		
+		<img class = "port" src='IMG/$row["portrait"]'/>
+		<h1 class ="name">$row["first"] $row["last"] </h1>
+	</div><div class="floatRight">$:row["body"]</div></div>
 	<div class = "single_section" id='$row["ID"]'>
 		<h3 class = "arr" id = "prev">&larr;</h3>
 		<div class = "ship_section" >
 			<img class = "ship" src='IMG/$row["image"]'/>
 			<h1 class ="ship">$row["ship"]</h1>
 		</div>
-		<div class ="ship_section">
+		<!--<div class ="ship_section">
 			<img class = "port" src='IMG/$row["portrait"]'/>
 			<h1 class ="name">$row["first"] $row["last"] </h1>
-		</div>
+		</div>-->
 		<h3 class = "arr" id = "next">&rarr;</h3>
 	</div>
-	<p class = "artifact">$row["artifact"]</p>
-	<p class = "bodytext">$:row["body"]</p>
+	<p class = "artifact">$:row["artifact"]</p>
+	
