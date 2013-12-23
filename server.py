@@ -17,7 +17,11 @@ urls = (
 	'/story/(.*)', 'singleStory',
 	'/', 'index',
 	'/lifeSaving/LAKE/(.*)','lifeSaving',
-	'/lifeSaving/ID/(.*)','singleLife'
+	'/lifeSaving/ID/(.*)','singleLife',
+	'/storyBehindaName','storyHT',
+	'/saving','savingHT',
+	'/aboard','aboardHT'
+	
 	
 	
 	
@@ -25,7 +29,19 @@ urls = (
 
 class index:
 	def GET(self):
-		raise webpy.seeother('static/lifeAboard/index.html')
+		raise webpy.seeother('static/Story_HT/Resources/index.html')
+		
+class storyHT:
+	def GET(self):
+		raise webpy.seeother('static/Story_HT/Resources/index.html')
+		
+class aboardHT:
+	def GET(self):
+		raise webpy.seeother('static/lifeAboard/HTDOCS/index.html')
+		
+class savingHT:
+	def GET(self):
+		raise webpy.seeother('static/LifeSaving/HTDOCS/index.html')
 
 class singleStory:
 	def GET(self, hoot):
