@@ -28,13 +28,13 @@ class index:
 		raise webpy.seeother('static/lifeAboard/index.html')
 
 class singleStory:
-	def GET(self, hoot):
+	def GET(self, id):
 		webpy.header('Access-Control-Allow-Origin',      '*')
 		webpy.header('Access-Control-Allow-Credentials', 'true')
 		webpy.header('Content-Type','text/html; charset=utf-8', unique=True) 
 		with con:
 			#cur.execute("SELECT * FROM lifeAboard WHERE AuthorID = ? and CategoryID = ?",(1,1))
-			cur.execute("SELECT * FROM story WHERE ID = ?",(hoot))
+			cur.execute("SELECT * FROM story WHERE ID = ?",[id])
 			rows = cur.fetchall()
 
 
