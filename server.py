@@ -41,7 +41,7 @@ class aboardHT:
 		
 class savingHT:
 	def GET(self):
-		raise webpy.seeother('static/LifeSaving/HTDOCS/index.html')
+		raise webpy.seeother('static/LifeSaving/Life_Saving/Resources/index.html')
 
 class singleStory:
 	def GET(self, hoot):
